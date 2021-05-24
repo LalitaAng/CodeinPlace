@@ -15,7 +15,42 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    # move to beeper
+    move()
+    move()
+
+    pick_beeper()
+
+    # move to destination
+    move()
+    turn_left()
+    move()
+    move()
+
+    put_beeper()
+
+    # return to the start point
+    turn_around()
+    move()
+    move()
+    turn_right()
+    move()
+    move()
+    move()
+
+    # re-direction
+    turn_around()
+
+
+def turn_around():
+    turn_left()
+    turn_left()
+
+
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
 
 
 # There is no need to edit code beyond this point

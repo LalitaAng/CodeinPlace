@@ -15,7 +15,20 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    put_beeper()
+    while front_is_clear():
+        # move like "L" letter
+        move()
+        move()
+        turn_left()
+        move()
+        turn_right()
+        put_beeper()
+
+
+def turn_right():
+    for i in range(3):
+        turn_left()
 
 
 # There is no need to edit code beyond this point

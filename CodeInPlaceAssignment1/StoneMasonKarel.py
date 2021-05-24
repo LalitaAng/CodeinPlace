@@ -17,7 +17,35 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    repair_arches()
+    return_place()
+    while front_is_clear():
+        for i in range(4):
+            move()
+        repair_arches()
+        return_place()
+
+
+def repair_arches():
+    turn_left()
+    if no_beepers_present():
+        put_beeper()
+    while front_is_clear():
+        move()
+        if no_beepers_present():
+            put_beeper()
+
+
+def turn_around():
+    turn_left()
+    turn_left()
+
+
+def return_place():
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_left()
 
 
 # There is no need to edit code beyond this point

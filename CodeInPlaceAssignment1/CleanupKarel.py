@@ -14,7 +14,10 @@ def main():
     starting to write your own code. You should also delete this
     comment and replace it with a better, more descriptive one.
     """
-    pass
+    while front_is_clear():
+        move()
+        if beepers_present():
+            pick_beeper()
 
 
 # There is no need to edit code beyond this point
