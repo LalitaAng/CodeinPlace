@@ -12,7 +12,8 @@ def main():
     your own code. You should also delete this comment and replace
     it with a better, more descriptive one.
     """
-    pass
+    name = input("What is your name? ")
+    print("Hello " + name + "!")
 
 
 # This provided line is required at the end of a Python file

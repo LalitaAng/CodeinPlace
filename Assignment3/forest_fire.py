@@ -15,7 +15,9 @@ value.
 # Its depends on the Pillow package being installed
 from simpleimage import SimpleImage
 
+INTENSITY_THRESHOLD = 1
 DEFAULT_FILE = 'images/greenland-fire.png'
+
 
 def find_flames(filename):
     """
@@ -24,8 +26,27 @@ def find_flames(filename):
     in order to highlight areas of wildfires.
     """
     image = SimpleImage(filename)
-    # TODO: your code here
+    for pixel in image:
+        average = (pixel.red + pixel.green + pixel.blue) // 3
+        if pixel.red >= (average * INTENSITY_THRESHOLD):
+            pixel.red = 255
+            pixel.green = 0
+            pixel.blue = 0
+        else:
+            luminosity = compute_luminosity(pixel.red, pixel.green, pixel.blue)
+            pixel.red = luminosity
+            pixel.green = luminosity
+            pixel.blue = luminosity
     return image
+
+
+def compute_luminosity(red, green, blue):
+    """
+    Calculates the luminosity of a pixel using NTSC formula
+    to weight red, green, and blue values appropriately.
+    """
+    return (0.299 * red) + (0.587 * green) + (0.114 * blue)
+
 
 def main():
     # Get file and load image
