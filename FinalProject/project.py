@@ -32,11 +32,11 @@ import random
 
 # this part of the program is to random what to eat
 def what_to_eat():
-    print("Our choices are")
-    print("Chinese, Italian, Japanese, Korean, Thai , Vietnamese and general")
+    print("\nOur choices are")
+    print("Chinese, Italian, Japanese, Korean, Thai, Vietnamese and general")
     print("Do you have any preferences?")
-    print("Enter the nationalities of your preference(all in lower case) or r as random")
-    nationality = input("Please enter your preference: ")
+    print("\nEnter the nationalities of your preference(all in lower case) or r for random")
+    nationality = input("\nPlease enter your preference: ")
     if nationality == 'r':
         nationality = random_nationality()
     return nationality
@@ -44,15 +44,15 @@ def what_to_eat():
 
 def random_nationality():
     nationalities = ['chinese', 'italian', 'japanese', 'korean', 'thai', 'general']
-    return nationalities[random.randint(0, len(nationalities))]
+    return nationalities[random.randint(0, len(nationalities) - 1)]
 
 
-def specify_dish(nationality):
+def specify_dish_to_eat(nationality):
     dishes = {
         'chinese': ["Mapo Tofu", "Baozi", "Peking Duck", "Gong Bao Ji Ding", "Hotpot"],
         'italian': ["Pizza", "Carbonara(no cream!)", "Risotto", "Lasagna", "Arancini"],
         'japanese': ["Onigiri", "Tonkatsu", "Okonomiyaki", "Soba", "Katsudon"],
-        'korean': ["Dakgalbi", "Bibimbap", "Tteokbokki", "Kimchijjigae", "Kalguksu"],
+        'korean': ["Dakgalbi", "Bibimbap", "Tteokbokki", "Kimchi Jjigae", "Kalguksu"],
         'thai': ["Padkaprao", "Somtam", "Padprikkaeng", "Kangsom", "Pupadpongkaree"],
         'general': ["Fried Noodle", "Fried Rice", "Fried Vegetable", "Omelette", "Fried Chicken"]
             }
@@ -61,34 +61,64 @@ def specify_dish(nationality):
 
 
 # this part of the program is to random what to cook
-# def what_to_cook():
+def what_to_cook():
+    print("\nOur choices are")
+    print("Chicken, Pork, Shrimp, Tofu, (only) Vegetable")
+    print("Do you have any preferences?")
+    print("\nEnter the ingredients of your preference(all in lower case) or r for random")
+    ingredient = input("\nPlease enter your preference: ")
+    if ingredient == 'r':
+        ingredient = random_main_ingredient()
+    return ingredient
 
 
-# def random_main_ingredient():
-#    ingredients = ['chicken', 'pork', 'shrimp', 'tofu', 'vegetable']
+def random_main_ingredient():
+    ingredients = ['chicken', 'pork', 'shrimp', 'tofu', 'vegetable']
+    return ingredients[random.randint(0, len(ingredients) - 1)]
+
+
+def specify_dish_to_cook(ingredient):
+    dishes = {
+        'chicken': ["Green curry", "Dakbokkeumtang", "Tikka Massala", "Khaipadmedmamaung", "Chicken rice"],
+        'pork': ["Moosatay", "Char Siu", "Padkaprao", "Pad See Ew", "Baked pork ribs"],
+        'shrimp': ["Freid curry", "Tomyam", "Kaeng Liang", "Pad Thai", "Fried rice"],
+        'tofu': ["Mapo Tofu", "Kaipalo", "Taohunamdang", "Sundubu Jjigae", "Fried tofu with sweet&sour sauce"],
+        'vegetable': ["Bibimbap", "Fried Cabbage with fish sauce", "Kangsom", "Mushroom soup", "Lab Hed"],
+            }
+    dish = dishes[ingredient][random.randint(0, 5)]
+    return dish
 
 
 def main():
     print("Welcome to the program, which will help you choose what to eat/cook this meal")
-    print("Please enter e to let the program choose what to eat")
+    print("\nPlease enter e to let the program choose what to eat")
     print("or enter c to let the program choose what to cook")
-    choice = input("Enter e or c (in lower case) : ")
+    choice = input("\nEnter e or c (in lower case) : ")
     while (choice != 'e') and (choice != 'c'):
         print("Please enter only e or c")
-        choice = input("Enter e or c (in lower case) : ")
+        choice = input("\nEnter e or c (in lower case) : ")
     if choice == 'e':
         result = what_to_eat()
-        print("This is your random nationality of your dish this meal: " + result)
-        print("Do you want to continue the program to specify the menu?")
+        print("\nThis is your random nationality of your dish this meal: " + result)
+        print("\nDo you want to continue the program to specify the menu?")
         choice = input("Please enter y for yes, and n for no (in lower case): ")
         while (choice != 'y') and (choice != 'n'):
             print("Please enter only y or n")
             choice = input("Please enter y for yes, and n for no (in lower case): ")
         if choice == 'y':
-            result = specify_dish(result)
-            print(result)
+            result = specify_dish_to_eat(result)
     elif choice == 'c':
-        what_to_cook()
+        result = what_to_cook()
+        print("\nThis is your random ingredient of your dish this meal: " + result)
+        print("\nDo you want to continue the program to specify the menu?")
+        choice = input("Please enter y for yes, and n for no (in lower case): ")
+        while (choice != 'y') and (choice != 'n'):
+            print("Please enter only y or n")
+            choice = input("Please enter y for yes, and n for no (in lower case): ")
+        if choice == 'y':
+            result = specify_dish_to_cook(result)
+    print("\nThis is your final result: " + result)
+    print("Enjoy your meal!")
 
 
 if __name__ == '__main__':
