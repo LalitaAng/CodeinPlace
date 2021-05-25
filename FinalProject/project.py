@@ -13,17 +13,17 @@ based on what did you choose to scope the category
 All of the recipes which appear here are based on my preferences
 I didn't include ALL of them because this is just a prototype and
 because I'm still a beginner at Python
-I didn't mean to say that food from others nationalities are not good
+I didn't mean to say that food from other nationalities are not good
 They are all delicious and worth to try!
 And I didn't mean that these examples from each nationalities are the best
-as I said, I didn't include ALL. There are a lot to try!
-Moreover, some might say that, some dish belong whereelse. In my opinion,
+as I said, I didn't include ALL. There are a lot more to try!
+Moreover, some might say that, some dish belong some where else. In my opinion,
 foods are influenced by culture and they are mixed. So some dishes cannot
 be exactly categorized, from which country it belongs to. I tried my best to not
 include these not sure menus.
 One more thing, which I want to mention, is I didn't say that, categorize by nationalities
 are the best way to do and everyone should do. It's just my style to come up
-with idea, what I want to eat.
+with idea, what I want to eat. And also, by ingredient. This is just, how my brain works.
 """
 
 
