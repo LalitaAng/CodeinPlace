@@ -2,8 +2,9 @@
 
 Hello Codeinplace! 
 
-This is my final project from Codeinplace. 
-I'm doing this based on my question in daily life, what do I want to eat.
+This is my repository during Codeinplace course.
+In a "FinalProject" folder, you could find my code for my final project. 
+I'm doing this based on my question in daily life, "what do I want to eat?".
 
 So this program will random my dish based on nationality or ingredients.
 As I wrote in my code as disclaimer, this is my style to come up with my dish. 
